@@ -16,7 +16,8 @@ app.disable('etag');
 app.use(nocache());
 
 app.use(compression({
-  level: 9;
+  level: 9,
+  threshold: 0
 }))
 app.enable('trust proxy');
 app.get('/', authenticate, params, proxy);
